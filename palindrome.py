@@ -1,4 +1,19 @@
-# Letters and punctuation marks to be replaced
+"""
+Author : https://github.com/Hatcattt
+
+PalindromePy
+
+This program check if a sentence (or a world) is a palindrome or not.
+Return a boolean True if the sentence is a palindrome, False otherwise.
+
+LETTERS_TO_CHANGE is a dictionary with letters and punctuation marks to be replaced.
+
+Exemple:
+
+print(is_palindrome("kayak")) -> output True
+"""
+
+# Dictionary with letters and punctuation marks to be replaced
 LETTERS_TO_CHANGE = {
         "à": "a",
         "ä": "a",
@@ -42,7 +57,7 @@ def is_palindrome(sentence):
     This function return True if the string in parameter is a palindrome, False otherwise
 
     :param sentence: string to test (type string)
-    :return: True if phrase is a palindrome, False otherwise (type bool)
+    :return: True if the sentence is a palindrome, False otherwise (type bool)
     """
 
     if sentence is None or len(sentence) <= 2:
@@ -50,18 +65,3 @@ def is_palindrome(sentence):
 
     sentence = normalize(sentence)
     return sentence == sentence.lower()[::-1]
-
-
-sentence1 = "I am a palindrome!"
-sentence2 = "Élu par cette crapule!"
-sentence3 = "No, it is open on one position."
-
-print(f"{sentence1} ->", is_palindrome(sentence1))
-print(f"{sentence2} ->", is_palindrome(sentence2))
-print(f"{sentence3} ->", is_palindrome(sentence3))
-
-# Output:
-
-# I am a palindrome! -> False
-# Élu par cette crapule! -> True
-# No, it is open on one position. -> True
