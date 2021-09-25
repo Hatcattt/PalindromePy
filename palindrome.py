@@ -6,14 +6,10 @@ PalindromePy
 This program check if a sentence (or a world) is a palindrome or not.
 Return a boolean True if the sentence is a palindrome, False otherwise.
 
-LETTERS_TO_CHANGE is a dictionary with letters and punctuation marks to be replaced.
+Work with french language too.
 
-Exemple:
-
-print(is_palindrome("kayak")) -> output True
 """
 
-# Dictionary with letters and punctuation marks to be replaced
 LETTERS_TO_CHANGE = {
         "à": "a",
         "ä": "a",
@@ -41,11 +37,9 @@ LETTERS_TO_CHANGE = {
 
 def normalize(sentence):
     """
-    This function returns a new sentence in lowercase letters changing all accented letters to normal letters,
+    This function returns a new sentence in lowercase letters
+    changing all accented letters to normal letters,
     remove spaces and punctuation marks.
-
-    :param sentence: string to transform (type string)
-    :return: new sentence (type string)
     """
     for key, value in LETTERS_TO_CHANGE.items():
         sentence = sentence.replace(key, value).lower()
@@ -54,14 +48,10 @@ def normalize(sentence):
 
 def is_palindrome(sentence):
     """
-    This function return True if the string in parameter is a palindrome, False otherwise
-
-    :param sentence: string to test (type string)
-    :return: True if the sentence is a palindrome, False otherwise (type bool)
+    This function return True if the string in parameter
+    is a palindrome, False otherwise
+    :return: True or False
     """
-
-    if sentence is None or len(sentence) <= 2:
-        return False
-
     sentence = normalize(sentence)
-    return sentence == sentence.lower()[::-1]
+    return (sentence == sentence.lower()[::-1]) if len(sentence) > 2 else False
+
