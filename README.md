@@ -1,4 +1,4 @@
-<h4>A small program to check if a sentence is a palindrome or not.</h4>
+<h3>A small program to check if a sentence is a palindrome or not.</h3>
 
 A palindrome is a word, number, phrase, or other sequence of
 characters which reads the same backward as forward.
